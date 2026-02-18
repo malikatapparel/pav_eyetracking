@@ -7,3 +7,4 @@ This repository contains a proof-of-concept eye-tracking algorithm focused on we
 - `data/raw/` - Original eye movement video files
 - `data/processed/` - Output videos with eye-tracking overlays and eye-gaze coordinates dataframe
 
+Run `pip install -r requirements.txt`
