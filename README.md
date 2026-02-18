@@ -6,13 +6,13 @@ This repository contains a proof-of-concept eye-tracking algorithm focused on we
 ├── src/                    # Eye-tracking algorithm implementation
 ├── data/
 │   ├── raw/               # Original eye movement video files
-│   └── processed/         # Output videos with tracking overlays + CSV files
+│   └── processed/         # Output videos with tracking overlays + CSV file
 ├── requirements.txt       # Python dependencies
 └── README.md
 ```
 
 ## Key Features
-- Binary gaze classification (left/center/right)
+- Gaze classification (left/center/right)
 - Lightweight OpenCV-based processing
 - Frame-by-frame CSV output
 - Annotated video overlay for quality control
@@ -21,7 +21,7 @@ This repository contains a proof-of-concept eye-tracking algorithm focused on we
 `
 pip install -r requirements.txt
 `
-## Pipeline
+## Eye-tracking pipeline
 1. Eye region extraction from a video frame
 2. Grayscale conversion + Gaussian blur
 3. Binary thresholding for pupil detection
