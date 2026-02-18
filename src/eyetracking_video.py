@@ -1,7 +1,15 @@
+'''
+Project: Eye-tracking video processing for Pavlovian task
+Author: Malika Tapparel
+Description:
+This script processes an eye gaze video. It detects the pupil, classifies gaze direction (left, right, center), and saves the processed video with annotations. 
+It also exports gaze data (pupil position and gaze classification) to a CSV file for further analysis.
+'''
 
 import cv2
 import numpy as np
 import pandas as pd
+
 
 cap = cv2.VideoCapture("data/raw/eye_movie.mov")
 
