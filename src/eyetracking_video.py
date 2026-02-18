@@ -1,9 +1,9 @@
-# %%
+
 import cv2
 import numpy as np
 import pandas as pd
 
-cap = cv2.VideoCapture("../data/raw/eye_movie.mov")
+cap = cv2.VideoCapture("data/raw/eye_movie.mov")
 
 # Get video properties for the output
 fps = int(cap.get(cv2.CAP_PROP_FPS))
@@ -12,7 +12,7 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # Setup video writer (same format/size as input)
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # or 'XVID' for .avi
-out = cv2.VideoWriter("../data/processed/eye_movie_tracked.mov", fourcc, fps, (width, height))
+out = cv2.VideoWriter("data/processed/eye_movie_tracked.mov", fourcc, fps, (width, height))
 
 # Set up middle line for right/left classification in Pavlovian task (in ROI coordinates: cols=450px wide, middle = 225)
 MIDDLE_LINE = 244  # position of the pupil looking at the center
@@ -83,13 +83,12 @@ while True:
         break
 # Cleanup
 cv2.destroyAllWindows()
-print("Saved to ../data/processed/eye_movie_tracked.mov")
+print("Saved to data/processed/eye_movie_tracked.mov")
 cap.release()
 out.release()
 
 # Export gaze data to CSV
 df = pd.DataFrame(results)
-output_csv = "../data/processed/gaze_data.csv"
+output_csv = "data/processed/gaze_data.csv"
 df.to_csv(output_csv, index=False)
 
-# %%
